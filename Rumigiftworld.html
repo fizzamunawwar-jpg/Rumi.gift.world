@@ -1,0 +1,556 @@
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Rumi.gift.world</title>
+
+<style>
+
+body{
+margin:0;
+font-family:Georgia,serif;
+background:white;
+color:#333;
+scroll-behavior:smooth;
+}
+
+/* COLORS */
+:root{
+--red:#8B0000;
+--white:#ffffff;
+}
+
+/* WELCOME SCREEN */
+
+#welcome{
+position:fixed;
+width:100%;
+height:100%;
+background:linear-gradient(#8B0000,#4a0000);
+display:flex;
+justify-content:center;
+align-items:center;
+flex-direction:column;
+color:white;
+z-index:9999;
+}
+
+#welcome h1{
+font-size:50px;
+animation:zoom 2s infinite alternate;
+}
+
+#welcome button{
+padding:15px 30px;
+font-size:20px;
+border:none;
+background:white;
+color:#8B0000;
+border-radius:30px;
+cursor:pointer;
+}
+
+@keyframes zoom{
+from{transform:scale(1)}
+to{transform:scale(1.1)}
+}
+
+/* NAVBAR */
+
+nav{
+background:#8B0000;
+color:white;
+display:flex;
+justify-content:space-between;
+align-items:center;
+padding:15px 40px;
+position:sticky;
+top:0;
+}
+
+nav a{
+color:white;
+margin:10px;
+text-decoration:none;
+font-weight:bold;
+}
+
+/* HERO */
+
+.hero{
+height:90vh;
+background:url("https://images.unsplash.com/photo-1513885535751-8b9238bd345a");
+background-size:cover;
+background-position:center;
+display:flex;
+justify-content:center;
+align-items:center;
+text-align:center;
+color:white;
+}
+
+.hero h1{
+font-size:60px;
+background:rgba(0,0,0,0.5);
+padding:20px;
+border-radius:10px;
+}
+
+/* SECTIONS */
+
+section{
+padding:70px 10%;
+}
+
+h2{
+text-align:center;
+color:#8B0000;
+margin-bottom:40px;
+}
+
+/* PRODUCTS */
+
+.products{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+gap:30px;
+}
+
+.card{
+background:white;
+border-radius:15px;
+box-shadow:0 5px 20px rgba(0,0,0,0.2);
+overflow:hidden;
+transition:0.3s;
+}
+
+.card:hover{
+transform:scale(1.05);
+}
+
+.card img{
+width:100%;
+height:220px;
+object-fit:cover;
+}
+
+.card h3{
+padding:10px;
+}
+
+.price{
+color:#8B0000;
+font-weight:bold;
+padding:10px;
+}
+
+/* CUSTOM SECTION */
+
+.custom{
+text-align:center;
+}
+
+/* REVIEW FORM */
+
+.review-box{
+max-width:600px;
+margin:auto;
+display:flex;
+flex-direction:column;
+gap:10px;
+}
+
+.review-box input,
+.review-box textarea{
+padding:10px;
+border-radius:10px;
+border:1px solid #ccc;
+}
+
+.review-box button{
+background:#8B0000;
+color:white;
+border:none;
+padding:10px;
+border-radius:20px;
+cursor:pointer;
+}
+
+/* REVIEW DISPLAY */
+
+.review{
+border:1px solid #ddd;
+padding:15px;
+margin:15px 0;
+border-radius:10px;
+background:#fafafa;
+}
+
+.review img{
+width:200px;
+margin-top:10px;
+border-radius:10px;
+}
+
+/* GALLERY */
+
+.gallery{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(200px,1fr));
+gap:20px;
+}
+
+.gallery img{
+width:100%;
+border-radius:10px;
+}
+
+/* FOOTER */
+
+footer{
+background:#8B0000;
+color:white;
+text-align:center;
+padding:40px;
+}
+
+</style>
+</head>
+
+<body>
+
+<!-- WELCOME SCREEN -->
+
+<div id="welcome">
+<h1>Welcome to RumiGiftWorld</h1>
+<button onclick="enterSite()">Enter Website</button>
+</div>
+
+<!-- NAVBAR -->
+
+<nav>
+
+<div><b>R🎁W</b> Rumi.gift.world</div>
+
+<div>
+<a href="#home">Home</a>
+<a href="#bouquets">Bouquets</a>
+<a href="#boxes">Boxes</a>
+<a href="#custom">Custom</a>
+<a href="#ideas">Gift Ideas</a>
+<a href="#reviews">Reviews</a>
+<a href="#order">Order</a>
+</div>
+
+</nav>
+
+<!-- HERO -->
+
+<div class="hero" id="home">
+<h1>Made with Love for Your Loved Ones</h1>
+</div>
+
+<!-- ABOUT -->
+
+<section>
+
+<h2>Handmade Quality & Care</h2>
+
+<p style="text-align:center;max-width:700px;margin:auto;">
+At <b>Rumi.gift.world</b> every bouquet and gift box is carefully handmade with love.
+We create luxury gifts that make your loved ones smile and feel special.
+</p>
+
+</section>
+
+<!-- BOUQUETS -->
+
+<section id="bouquets">
+
+<h2>Bouquets (Starting from Rs 500)</h2>
+
+<div class="products">
+
+<div class="card">
+<img src="https://images.unsplash.com/photo-1606800052052-a08af7148866">
+<h3>Ribbon Flower Bouquet</h3>
+<p class="price">Rs 500+</p>
+</div>
+
+<div class="card">
+<img src="https://images.unsplash.com/photo-1606312619070-d48b4c652a52">
+<h3>Chocolate Bouquet</h3>
+<p class="price">Rs 700+</p>
+</div>
+
+<div class="card">
+<img src="https://images.unsplash.com/photo-1621996346565-e3dbc353d2e5">
+<h3>Candies Bouquet</h3>
+<p class="price">Rs 650+</p>
+</div>
+
+<div class="card">
+<img src="https://images.unsplash.com/photo-1606313564200-e75d5e30476c">
+<h3>Snack Bouquet</h3>
+<p class="price">Rs 800+</p>
+</div>
+
+<div class="card">
+<img src="https://images.unsplash.com/photo-1512436991641-6745cdb1723f">
+<h3>Jewellery Bouquet</h3>
+<p class="price">Rs 900+</p>
+</div>
+
+<div class="card">
+<img src="https://images.unsplash.com/photo-1593032465171-8dfd1c5f1f3e">
+<h3>Hijab Bouquet</h3>
+<p class="price">Rs 850+</p>
+</div>
+
+</div>
+
+</section>
+
+<!-- BOXES -->
+
+<section id="boxes">
+
+<h2>Boxes & Baskets (Starting from Rs 1000)</h2>
+
+<div class="products">
+
+<div class="card">
+<img src="https://images.unsplash.com/photo-1606313564200-e75d5e30476c">
+<h3>Chocolate Box</h3>
+<p class="price">Rs 1000+</p>
+</div>
+
+<div class="card">
+<img src="https://images.unsplash.com/photo-1606313564200-e75d5e30476c">
+<h3>Candies Box</h3>
+<p class="price">Rs 1000+</p>
+</div>
+
+<div class="card">
+<img src="https://images.unsplash.com/photo-1606313564200-e75d5e30476c">
+<h3>Snack Box</h3>
+<p class="price">Rs 1100+</p>
+</div>
+
+<div class="card">
+<img src="https://images.unsplash.com/photo-1512436991641-6745cdb1723f">
+<h3>Jewellery Box</h3>
+<p class="price">Rs 1200+</p>
+</div>
+
+<div class="card">
+<img src="https://images.unsplash.com/photo-1593032465171-8dfd1c5f1f3e">
+<h3>Hijab Box</h3>
+<p class="price">Rs 1100+</p>
+</div>
+
+</div>
+
+</section>
+
+<!-- CUSTOM -->
+
+<section id="custom">
+
+<h2>Custom Gifts</h2>
+
+<div class="custom">
+
+<p>You can customise your gift according to your loved one's taste.</p>
+
+<a href="https://instagram.com/rumi.gift.world" target="_blank">
+
+<button style="padding:12px 25px;background:#8B0000;color:white;border:none;border-radius:25px;">
+Order from Instagram
+</button>
+
+</a>
+
+</div>
+
+</section>
+
+<!-- GIFT IDEAS -->
+
+<section id="ideas">
+
+<h2>Gift Inspiration</h2>
+
+<div class="gallery">
+
+<img src="https://images.unsplash.com/photo-1513885535751-8b9238bd345a">
+<img src="https://images.unsplash.com/photo-1512436991641-6745cdb1723f">
+<img src="https://images.unsplash.com/photo-1606800052052-a08af7148866">
+<img src="https://images.unsplash.com/photo-1606312619070-d48b4c652a52">
+
+</div>
+
+</section>
+
+<!-- REVIEWS -->
+
+<section id="reviews">
+
+<h2>Customer Reviews</h2>
+
+<div class="review-box">
+
+<input id="name" placeholder="Your Name">
+
+<textarea id="reviewText" placeholder="Write your review"></textarea>
+
+<input type="file" id="reviewImage">
+
+<button onclick="addReview()">Submit Review</button>
+
+</div>
+
+<div id="reviewList"></div>
+
+</section>
+
+<!-- ORDER -->
+
+<section id="order">
+
+<h2>How To Order</h2>
+
+<p style="text-align:center">
+
+1️⃣ Choose your favourite gift<br><br>
+2️⃣ Take a screenshot<br><br>
+3️⃣ Send it to our Instagram page<br><br>
+4️⃣ We will customise it for you
+
+</p>
+
+</section>
+
+<footer>
+
+<h3>R🎁W Rumi.gift.world</h3>
+<p>Made with Love for Your Loved Ones</p>
+<p>Instagram: rumi.gift.world</p>
+
+</footer>
+
+<script>
+
+/* ENTER SITE */
+
+function enterSite(){
+document.getElementById("welcome").style.display="none";
+}
+
+/* LOAD REVIEWS */
+
+window.onload=function(){
+displayReviews();
+};
+
+/* ADD REVIEW */
+
+function addReview(){
+
+let name=document.getElementById("name").value;
+let text=document.getElementById("reviewText").value;
+let imgInput=document.getElementById("reviewImage");
+
+if(name=="" || text==""){
+alert("Please write your name and review.");
+return;
+}
+
+let reader=new FileReader();
+
+reader.onload=function(){
+
+let review={
+name:name,
+text:text,
+image:reader.result
+};
+
+let reviews=JSON.parse(localStorage.getItem("reviews"))||[];
+
+reviews.push(review);
+
+localStorage.setItem("reviews",JSON.stringify(reviews));
+
+displayReviews();
+
+};
+
+if(imgInput.files[0]){
+reader.readAsDataURL(imgInput.files[0]);
+}else{
+
+let review={
+name:name,
+text:text,
+image:null
+};
+
+let reviews=JSON.parse(localStorage.getItem("reviews"))||[];
+
+reviews.push(review);
+
+localStorage.setItem("reviews",JSON.stringify(reviews));
+
+displayReviews();
+
+}
+
+document.getElementById("name").value="";
+document.getElementById("reviewText").value="";
+document.getElementById("reviewImage").value="";
+
+}
+
+/* DISPLAY REVIEWS */
+
+function displayReviews(){
+
+let reviews=JSON.parse(localStorage.getItem("reviews"))||[];
+
+let container=document.getElementById("reviewList");
+
+container.innerHTML="";
+
+reviews.forEach(r=>{
+
+let div=document.createElement("div");
+div.className="review";
+
+div.innerHTML="<b>"+r.name+"</b><p>"+r.text+"</p>";
+
+if(r.image){
+let img=document.createElement("img");
+img.src=r.image;
+div.appendChild(img);
+}
+
+container.appendChild(div);
+
+});
+
+}
+
+/* EXIT MESSAGE */
+
+window.onbeforeunload=function(){
+alert("Thank you for choosing us and visiting our brand. Hope you find something for your loved ones!");
+}
+
+</script>
+
+</body>
+</html>
+```
